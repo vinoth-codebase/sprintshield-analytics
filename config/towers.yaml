@@ -1,0 +1,93 @@
+# =============================================================================
+# SprintShield Analytics - Organizational Tower Profiles
+# =============================================================================
+# Each tower declares its committed-vs-completed velocity envelope and the
+# operational signature of its unplanned support demand. The synthetic
+# generator and the analytics engine both read from this file.
+towers:
+  - tower_id: DE
+    name: Data Engineering
+    headcount: 14
+    story_points_per_sprint: 96
+    gross_hours_per_sprint: 320.0
+    arrival:
+      # Mean unplanned incidents per sprint (Poisson / NegBinom mu).
+      mean_incidents: 7.5
+      # Dispersion index target. >1.2 selects the Negative Binomial model.
+      dispersion: 1.35
+      # Probability that a release window spawns a burst of correlated tickets.
+      burst_probability: 0.22
+      burst_multiplier: 2.8
+    effort:
+      # Log-Normal parameters of resolution hours (mu of log, sigma of log).
+      lognormal_mu: 1.30
+      lognormal_sigma: 0.95
+      # Weibull shape/scale used as an alternative fitted family.
+      weibull_shape: 1.25
+      weibull_scale: 6.5
+    assets:
+      - { asset: dbt_core_warehouse, weight: 0.32, severity: 1.35 }
+      - { asset: airflow_orchestration, weight: 0.26, severity: 1.20 }
+      - { asset: kafka_ingestion, weight: 0.22, severity: 1.45 }
+      - { asset: snowflake_loader, weight: 0.20, severity: 1.05 }
+
+  - tower_id: DA
+    name: Data Analytics
+    headcount: 11
+    story_points_per_sprint: 74
+    gross_hours_per_sprint: 250.0
+    arrival:
+      mean_incidents: 12.4
+      dispersion: 1.55
+      burst_probability: 0.30
+      burst_multiplier: 2.2
+    effort:
+      lognormal_mu: 0.78
+      lognormal_sigma: 0.80
+      weibull_shape: 1.45
+      weibull_scale: 3.4
+    assets:
+      - { asset: tableau_exec_dashboards, weight: 0.34, severity: 1.10 }
+      - { asset: looker_metric_layer, weight: 0.28, severity: 1.25 }
+      - { asset: powerbi_regulatory, weight: 0.22, severity: 1.15 }
+      - { asset: semantic_model_registry, weight: 0.16, severity: 1.30 }
+
+  - tower_id: DS
+    name: Data Science
+    headcount: 9
+    story_points_per_sprint: 62
+    gross_hours_per_sprint: 205.0
+    arrival:
+      mean_incidents: 4.1
+      dispersion: 1.28
+      burst_probability: 0.14
+      burst_multiplier: 3.4
+    effort:
+      lognormal_mu: 1.22
+      lognormal_sigma: 1.15
+      weibull_shape: 1.10
+      weibull_scale: 7.2
+    assets:
+      - { asset: churn_model_v4, weight: 0.30, severity: 1.55 }
+      - { asset: recommendation_engine, weight: 0.27, severity: 1.40 }
+      - { asset: feature_store, weight: 0.25, severity: 1.35 }
+      - { asset: fraud_scoring_pipeline, weight: 0.18, severity: 1.60 }
+
+  - tower_id: PMO
+    name: PMO
+    headcount: 4
+    story_points_per_sprint: 28
+    gross_hours_per_sprint: 96.0
+    arrival:
+      mean_incidents: 2.6
+      dispersion: 1.05
+      burst_probability: 0.10
+      burst_multiplier: 1.8
+    effort:
+      lognormal_mu: 1.62
+      lognormal_sigma: 0.70
+      weibull_shape: 1.60
+      weibull_scale: 7.7
+    assets:
+      - { asset: portfolio_governance, weight: 0.55, severity: 1.00 }
+      - { asset: regulatory_audit_tracking, weight: 0.45, severity: 1.20 }

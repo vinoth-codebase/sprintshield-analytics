@@ -1,0 +1,30 @@
+# =============================================================================
+# SprintShield Analytics - Dual-Adapter Storage Configuration
+# =============================================================================
+# The active backend is chosen at runtime from the STORAGE_BACKEND env var
+# (see .env). This file only declares how each adapter is wired.
+storage:
+  default_backend: deltalake
+
+  deltalake:
+    root_path: data/delta
+    # Partition columns for the sprint snapshot table.
+    snapshot_partition_by: [tower_id, sprint_id]
+    # Partition columns for the support ticket table.
+    ticket_partition_by: [tower_id, sprint_id]
+    # Delta table names.
+    snapshot_table: sprint_snapshots
+    ticket_table: support_tickets
+    # Keep every historical version so time-travel audits are possible.
+    enable_time_travel: true
+
+  snowflake:
+    database: SPRINTSHIELD_DB
+    schema: TELEMETRY
+    snapshot_table: SPRINT_SNAPSHOTS
+    ticket_table: SUPPORT_TICKETS
+    warehouse: COMPUTE_WH
+    role: SYSADMIN
+    connect_timeout: 30
+    max_retries: 3
+    retry_backoff_seconds: 2.0

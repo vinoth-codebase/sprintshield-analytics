@@ -1,0 +1,48 @@
+# =============================================================================
+# SprintShield Analytics - Primary Configuration
+# =============================================================================
+project:
+  name: sprintshield-analytics
+  version: 1.0.0
+
+simulation:
+  # Number of independent Monte Carlo sprint iterations.
+  runs: 10000
+  random_seed: 20260724
+  # Delivery confidence threshold targeted by the planner.
+  confidence_target: 0.85
+  # Gross engineering capacity available per two-week sprint, in hours.
+  gross_hours_per_sprint: 320.0
+  # Planned commitment (story points) mapped to hours for delivery checks.
+  planned_points_per_sprint: 80
+  # Hours of engineering effort implied by one story point.
+  hours_per_point: 2.5
+
+arrival_model:
+  # Dispersion index thresholds used to select the arrival distribution.
+  poisson_lower_bound: 0.85
+  poisson_upper_bound: 1.20
+  # Guard rails for the Negative Binomial fitter.
+  negbinom_max_iter: 500
+  negbinom_tol: 1.0e-6
+
+effort_model:
+  # Candidate right-skewed distributions fitted to resolution hours.
+  candidates: [lognormal, weibull]
+  # Minimum observations required before a fit is considered reliable.
+  min_samples: 8
+  # Clamp on sampled effort so the simulator never emits negative or absurd hours.
+  min_hours: 0.25
+  max_hours: 240.0
+
+noise:
+  # Corporate operational noise injected by the synthetic generator.
+  release_regression_probability: 0.18
+  end_of_quarter_uplift: 1.65
+  holiday_capacity_drop: 0.55
+  black_swan_probability: 0.04
+
+reporting:
+  output_dir: reports
+  support_tax_warning_threshold: 0.20
+  support_tax_critical_threshold: 0.30
