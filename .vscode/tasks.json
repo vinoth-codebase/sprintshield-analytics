@@ -1,0 +1,77 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "SprintShield: Install (editable)",
+      "type": "shell",
+      "command": "pip install -e .",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Generate Synthetic Telemetry",
+      "type": "shell",
+      "command": "python scripts/generate_sprint_telemetry.py --sprints 24",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Run Monte Carlo Simulation",
+      "type": "shell",
+      "command": "sprintshield simulate --gross-hours 320 --planned-points 80",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Export Excel + PowerPoint",
+      "type": "shell",
+      "command": "sprintshield export --excel --pptx",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Launch Streamlit Dashboard",
+      "type": "shell",
+      "command": "streamlit run src/sprintshield/dashboard/app.py --server.port=8501",
+      "isBackground": true,
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Open Simple Browser Dashboard",
+      "type": "shell",
+      "command": "echo Opening http://localhost:8501 in VS Code Simple Browser...",
+      "dependsOn": "SprintShield: Launch Streamlit Dashboard",
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Run Pytest with Coverage",
+      "type": "shell",
+      "command": "pytest --cov=sprintshield --cov-report=term-missing --cov-fail-under=88",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Render VS Code Screenshots",
+      "type": "shell",
+      "command": "python scripts/generate_vscode_screenshots.py",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "SprintShield: Full Build Pipeline",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "SprintShield: Install (editable)",
+        "SprintShield: Generate Synthetic Telemetry",
+        "SprintShield: Run Pytest with Coverage",
+        "SprintShield: Export Excel + PowerPoint",
+        "SprintShield: Render VS Code Screenshots"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

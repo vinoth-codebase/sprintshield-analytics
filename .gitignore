@@ -1,0 +1,42 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# Data & generated artefacts
+data/
+reports/
+*.log
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Editors / OS
+.DS_Store
+.idea/
+*.swp
+
+# Keep the shipped examples and screenshots
+!examples/*.xlsx
+!examples/*.pptx
+!docs/screenshots/*.svg
