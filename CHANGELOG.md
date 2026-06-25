@@ -12,3 +12,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-06-24 14:40` feat(storage): build snowflake cloud adapter with connection pooling and query retries
 - `2026-06-24 18:15` feat(storage): construct storage factory provider selecting backend via env variable
 - `2026-06-25 10:45` test(storage): add unit tests for delta lake and snowflake repository adapters
+- `2026-06-25 16:20` feat(client): implement httpx-based jira rest client for agile boards and issue searches
