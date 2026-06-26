@@ -14,3 +14,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-06-25 10:45` test(storage): add unit tests for delta lake and snowflake repository adapters
 - `2026-06-25 16:20` feat(client): implement httpx-based jira rest client for agile boards and issue searches
 - `2026-06-26 09:15` feat(client): add pagination and token authentication handlers for jira rest endpoints
+- `2026-06-26 13:30` feat(client): implement changelog and worklog parser to measure logged ticket hours
