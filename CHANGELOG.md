@@ -15,3 +15,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-06-25 16:20` feat(client): implement httpx-based jira rest client for agile boards and issue searches
 - `2026-06-26 09:15` feat(client): add pagination and token authentication handlers for jira rest endpoints
 - `2026-06-26 13:30` feat(client): implement changelog and worklog parser to measure logged ticket hours
+- `2026-06-26 17:45` feat(client): implement synthetic sprint telemetry generator simulating 24 bi-weekly sprints
