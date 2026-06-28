@@ -17,3 +17,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-06-26 13:30` feat(client): implement changelog and worklog parser to measure logged ticket hours
 - `2026-06-26 17:45` feat(client): implement synthetic sprint telemetry generator simulating 24 bi-weekly sprints
 - `2026-06-27 13:50` feat(client): model specialized operational profiles for data engineering, analytics, and data science
+- `2026-06-28 14:30` feat(client): inject platform release regressions and holiday capacity dips into generator
