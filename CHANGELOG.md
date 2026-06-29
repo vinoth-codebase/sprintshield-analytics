@@ -20,3 +20,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-06-28 14:30` feat(client): inject platform release regressions and holiday capacity dips into generator
 - `2026-06-29 10:20` test(client): add unit tests verifying jira rest client and synthetic dataset generator
 - `2026-06-29 14:15` feat(analytics): build core operational metric calculators for support tax and flow efficiency
+- `2026-06-29 17:50` feat(analytics): implement delivery predictability index and sprint buffer sizing metrics
