@@ -26,3 +26,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-01 09:00` feat(analytics): build negative binomial distribution fitter for clustered release demand
 - `2026-07-01 11:30` feat(analytics): implement goodness-of-fit hypothesis testing comparing arrival models
 - `2026-07-01 14:15` feat(analytics): fit log-normal distribution to right-skewed incident resolution hours
+- `2026-07-01 16:45` feat(analytics): implement weibull distribution fitting for long-tail support interventions
