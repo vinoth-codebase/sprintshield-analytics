@@ -29,3 +29,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-01 16:45` feat(analytics): implement weibull distribution fitting for long-tail support interventions
 - `2026-07-01 19:15` test(analytics): test arrival and effort distribution fitters against simulated baselines
 - `2026-07-02 14:10` feat(analytics): construct vectorized monte carlo sprint capacity simulator kernel
+- `2026-07-03 10:35` feat(analytics): integrate 10000-run simulation sampling from joint arrival and effort models
