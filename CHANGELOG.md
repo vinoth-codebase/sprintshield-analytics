@@ -35,3 +35,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-06 10:45` feat(reporting): scaffold openpyxl workbook generator for sprint support ledger
 - `2026-07-06 16:15` feat(reporting): implement executive kpi summary and tower breakdown tabs in excel export
 - `2026-07-07 09:20` feat(reporting): add conditional formatting heatmaps for support tax threshold breaches
+- `2026-07-07 11:50` feat(reporting): implement python-pptx slide master layout for steerco review deck
