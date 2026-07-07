@@ -34,3 +34,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-04 13:40` test(analytics): verify monte carlo simulation convergence and confidence interval math
 - `2026-07-06 10:45` feat(reporting): scaffold openpyxl workbook generator for sprint support ledger
 - `2026-07-06 16:15` feat(reporting): implement executive kpi summary and tower breakdown tabs in excel export
+- `2026-07-07 09:20` feat(reporting): add conditional formatting heatmaps for support tax threshold breaches
