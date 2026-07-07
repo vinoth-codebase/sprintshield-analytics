@@ -37,3 +37,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-07 09:20` feat(reporting): add conditional formatting heatmaps for support tax threshold breaches
 - `2026-07-07 11:50` feat(reporting): implement python-pptx slide master layout for steerco review deck
 - `2026-07-07 14:30` feat(reporting): add automated executive kpi scorecard and velocity trend slides
+- `2026-07-07 17:40` feat(reporting): embed monte carlo capacity recommendations into generated powerpoint slides
