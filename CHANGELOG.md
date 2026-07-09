@@ -40,3 +40,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-07 17:40` feat(reporting): embed monte carlo capacity recommendations into generated powerpoint slides
 - `2026-07-08 11:15` test(reporting): verify openpyxl workbook formatting and python-pptx slide generation
 - `2026-07-08 15:35` feat(interactive): scaffold scripts/interactive_analysis.py with vscode # %% cell blocks
+- `2026-07-09 14:20` feat(interactive): integrate plotly distribution plots in vscode python interactive pane
