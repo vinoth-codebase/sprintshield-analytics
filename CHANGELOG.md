@@ -45,3 +45,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-10 14:30` feat(dashboard): construct streamlit visual management layout optimized for vscode browser
 - `2026-07-10 17:45` feat(dashboard): implement what-if sprint capacity planning slider with live confidence gauge
 - `2026-07-11 13:15` feat(dashboard): build tower capacity radar donut charts showing support tax breakdown
+- `2026-07-12 14:40` feat(dashboard): add active support wip monitor tracking ongoing sprint blockers
