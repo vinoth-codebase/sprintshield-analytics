@@ -50,3 +50,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-13 16:25` feat(cli): bind extraction, simulation, reporting, and dashboard commands to rich cli
 - `2026-07-14 14:15` test(cli): add click runner unit tests for train, simulate, and export subcommands
 - `2026-07-15 08:45` perf(analytics): optimize monte carlo simulation sampling using vectorized numpy arrays
+- `2026-07-15 10:20` refactor(storage): streamline delta lake schema migration and optimize partition pruning
