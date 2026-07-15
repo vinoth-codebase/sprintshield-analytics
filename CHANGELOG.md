@@ -53,3 +53,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-15 10:20` refactor(storage): streamline delta lake schema migration and optimize partition pruning
 - `2026-07-15 11:50` feat(storage): implement fallback to delta lake if snowflake credentials are not detected
 - `2026-07-15 13:40` notebooks: create sprint_capacity_audit.ipynb with step-by-step visualizations
+- `2026-07-15 15:10` test: expand integration test suite verifying end-to-end extraction and reporting
