@@ -55,3 +55,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-15 13:40` notebooks: create sprint_capacity_audit.ipynb with step-by-step visualizations
 - `2026-07-15 15:10` test: expand integration test suite verifying end-to-end extraction and reporting
 - `2026-07-15 17:00` ci: enforce strict coverage threshold of 88% across analytics and storage modules
+- `2026-07-15 18:30` docs: implement scripts/generate_vscode_screenshots.py using rich and pillow renderer
