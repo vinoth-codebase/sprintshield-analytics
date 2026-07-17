@@ -59,3 +59,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-15 20:15` docs: render vscode interactive window preview showing monte carlo confidence curves
 - `2026-07-16 11:10` docs: capture vscode split editor preview showing support tax breakdown across towers
 - `2026-07-16 16:35` docs: capture vscode simple browser tab preview running streamlit planning simulator
+- `2026-07-17 09:30` docs: generate vscode excel viewer tab preview showing conditional formatting heatmaps
