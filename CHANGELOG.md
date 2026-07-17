@@ -61,3 +61,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-16 16:35` docs: capture vscode simple browser tab preview running streamlit planning simulator
 - `2026-07-17 09:30` docs: generate vscode excel viewer tab preview showing conditional formatting heatmaps
 - `2026-07-17 11:45` examples: generate verified sample_sprint_ledger.xlsx and sample_steerco_deck.pptx
+- `2026-07-17 14:20` refactor(cli): enhance terminal status tables and add progress bar animations
