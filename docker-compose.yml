@@ -1,0 +1,42 @@
+# =============================================================================
+# SprintShield Analytics - One-command local orchestration
+#   docker-compose up --build
+# =============================================================================
+name: sprintshield-analytics
+
+services:
+  sprintshield:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sprintshield-analytics:1.0.0
+    container_name: sprintshield-analytics
+    env_file:
+      - .env
+    environment:
+      STORAGE_BACKEND: ${STORAGE_BACKEND:-deltalake}
+      DELTA_LAKE_PATH: /app/data/delta
+      REPORT_OUTPUT_DIR: /app/reports
+      SIMULATION_RUNS: ${SIMULATION_RUNS:-10000}
+    ports:
+      - "8501:8501"
+    volumes:
+      - sprintshield_data:/app/data
+      - sprintshield_reports:/app/reports
+    command: >
+      sh -c "python scripts/generate_sprint_telemetry.py --sprints 24 &&
+             streamlit run src/sprintshield/dashboard/app.py
+             --server.port=8501 --server.address=0.0.0.0 --server.headless=true"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  sprintshield_data:
+    driver: local
+  sprintshield_reports:
+    driver: local
