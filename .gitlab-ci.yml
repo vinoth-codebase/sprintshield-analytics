@@ -1,0 +1,67 @@
+# =============================================================================
+# SprintShield Analytics - GitLab CI Pipeline
+# =============================================================================
+stages:
+  - lint
+  - test
+  - build
+  - package
+
+default:
+  image: python:3.12-slim
+  cache:
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - .cache/pip
+  before_script:
+    - python -V
+    - pip install --upgrade pip
+    - pip install -e ".[dev]"
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  STORAGE_BACKEND: "deltalake"
+  SIMULATION_RUNS: "10000"
+
+lint:ruff:
+  stage: lint
+  script:
+    - pip install ruff
+    - ruff check src tests scripts
+  allow_failure: true
+
+test:pytest:
+  stage: test
+  script:
+    - pytest --cov=sprintshield --cov-report=term-missing
+      --cov-report=xml:coverage.xml --cov-fail-under=88
+  coverage: '/^TOTAL.+?(\d+\%)$/'
+  artifacts:
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+    paths:
+      - coverage.xml
+    expire_in: 1 week
+
+build:telemetry:
+  stage: build
+  script:
+    - python scripts/generate_sprint_telemetry.py --sprints 24 --out-dir data/delta
+    - sprintshield simulate --gross-hours 320 --planned-points 80
+    - sprintshield export --excel --pptx
+  artifacts:
+    paths:
+      - reports/
+    expire_in: 1 week
+
+package:screenshots:
+  stage: package
+  script:
+    - python scripts/generate_vscode_screenshots.py
+  artifacts:
+    paths:
+      - docs/screenshots/
+    expire_in: 1 week
