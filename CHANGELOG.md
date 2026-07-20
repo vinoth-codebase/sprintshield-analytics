@@ -66,3 +66,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-18 13:50` feat(docker): build production dockerfile and docker-compose orchestration file
 - `2026-07-19 11:20` ci: configure gitlab-ci pipeline for linting, pytest suite, and code coverage threshold
 - `2026-07-19 15:40` docs: configure .vscode/settings.json, launch.json, and tasks.json for simple browser launch
+- `2026-07-20 14:25` docs: draft comprehensive project architecture overview in README.md
