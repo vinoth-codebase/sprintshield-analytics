@@ -69,3 +69,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-20 14:25` docs: draft comprehensive project architecture overview in README.md
 - `2026-07-21 10:15` docs: add detailed mathematical formulation for arrival models and monte carlo in README
 - `2026-07-21 14:30` docs: embed vscode visual svg assets and simple browser instructions in README.md
+- `2026-07-21 17:40` docs: add quickstart guide for vs code python interactive window and jupyter notebook
