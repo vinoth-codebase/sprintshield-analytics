@@ -73,3 +73,4 @@ All notable changes to **SprintShield Analytics** are recorded here.
 - `2026-07-22 15:20` refactor(config): clean up default thresholds and enhance inline documentation
 - `2026-07-23 11:30` chore: perform final dependency audit and lock package versions in pyproject.toml
 - `2026-07-23 16:45` test: perform clean environment installation check and verify all commands execute
+- `2026-07-24 17:00` release: finalize v1.0.0 documentation, architecture diagrams, and public README
