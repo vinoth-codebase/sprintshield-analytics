@@ -370,28 +370,7 @@ render in place. Right-click `reports/sprint_support_ledger.xlsx` → **Open Pre
 
 ---
 
-## 🖼️ Visual Previews
 
-**Interactive window — Monte Carlo summary and confidence curve**
-
-![VS Code Python Interactive window showing the Monte Carlo summary table and delivery confidence curve](docs/screenshots/vscode_interactive_monte_carlo.svg)
-
-**Split editor — support tax breakdown across towers**
-
-![VS Code split editor with interactive_analysis.py on the left and the Interactive output pane on the right](docs/screenshots/vscode_support_tax_breakdown.svg)
-
-**Simple Browser — Streamlit capacity cockpit on localhost:8501**
-
-![VS Code Simple Browser tab running the Streamlit dashboard with the What-If slider and live confidence gauge](docs/screenshots/vscode_simple_browser_dashboard.svg)
-
-**Excel Viewer — the conditional-formatting support-tax heatmap**
-
-![VS Code Excel Viewer tab showing the sprint support ledger heatmap](docs/screenshots/vscode_excel_viewer_capacity_ledger.svg)
-
-> These SVGs are generated from a **real Monte Carlo run**, not mocked up. Re-render them
-> at any time with `python scripts/generate_vscode_screenshots.py`.
-
----
 
 ## 🚀 Quickstart
 
